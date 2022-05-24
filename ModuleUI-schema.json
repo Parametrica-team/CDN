@@ -1,211 +1,215 @@
 {
-  "definitions": {
-    "ContextButton": {
-      "type": [
-        "object",
-        "null"
-      ],
-      "properties": {
-        "ContextTypes": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
+    "definitions": {
+        "ContextButton": {
             "type": [
-              "string",
-              "null"
+                "object",
+                "null"
+            ],
+            "properties": {
+                "ContextTypes": {
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "items": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    }
+                },
+                "Description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "Icon": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "Name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "AssemblyName": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "CommandName": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "ContextTypes",
+                "Description",
+                "Icon",
+                "Name",
+                "AssemblyName",
+                "CommandName"
             ]
-          }
         },
-        "Description": {
-          "type": [
-            "string",
-            "null"
-          ]
+        "IAttributeElement": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "Value": {},
+                "Description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "Name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "Type": {
+                  "title":"Тип аттрибута",
+                  "description": "Тип вводимого значения",
+                    "type": "string",
+                    "enum": [
+                        "ColorAttribute",
+                        "CheckAttribute",
+                        "RangeAttribute"
+                    ]
+                }
+            },
+            "required": [
+                "Value",
+                "Description",
+                "Name",
+                "Type"
+            ]
         },
-        "Icon": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "Name": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "AssemblyName": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "CommandName": {
-          "type": [
-            "string",
-            "null"
-          ]
+        "IButton": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "ActionType": {
+                    "type": "string",
+                    "enum": [
+                        "DrawLine",
+                        "DrawPolyline",
+                        "DrawRectangle",
+                        "DrawRectangleOriented",
+                        "DrawCircle",
+                        "PlacePoint",
+                        "PlaceObject",
+                        "PlaceObjectOriented",
+                        "ImportFile",
+                        "SendRequest",
+                        "OpenUrl"
+                    ]
+                },
+                "Description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "Icon": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "Name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "CommandName": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "ActionType",
+                "Description",
+                "Icon",
+                "Name",
+                "CommandName"
+            ]
         }
-      },
-      "required": [
-        "ContextTypes",
-        "Description",
-        "Icon",
-        "Name",
-        "AssemblyName",
-        "CommandName"
-      ]
     },
-    "IAttributeElement": {
-      "type": [
-        "object",
-        "null"
-      ],
-      "properties": {
-        "Value": {},
-        "Description": {
-          "type": [
-            "string",
-            "null"
-          ]
+    "type": "object",
+    "properties": {
+        "ToolBar": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "$ref": "#/definitions/IButton"
+            }
         },
-        "Name": {
-          "type": [
-            "string",
-            "null"
-          ]
+        "ContextButtons": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "$ref": "#/definitions/ContextButton"
+            }
         },
-        "Type": {
-          "type": [
-            "string",
-            "null"
-          ]
+        "Properties": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "additionalProperties": {
+                "type": [
+                    "array",
+                    "null"
+                ],
+                "items": {
+                    "$ref": "#/definitions/IAttributeElement"
+                }
+            }
+        },
+        "VisibilityFilterSettings": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "$ref": "#/definitions/IAttributeElement"
+            }
+        },
+        "ProjectSettings": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "$ref": "#/definitions/IAttributeElement"
+            }
         }
-      },
-      "required": [
-        "Value",
-        "Description",
-        "Name",
-        "Type"
-      ]
     },
-    "IButton": {
-      "type": [
-        "object",
-        "null"
-      ],
-      "properties": {
-        "ActionType": {
-          "type": "string",
-          "enum": [
-            "DrawLine",
-            "DrawPolyline",
-            "DrawRectangle",
-            "DrawRectangleOriented",
-            "DrawCircle",
-            "PlacePoint",
-            "PlaceObject",
-            "PlaceObjectOriented",
-            "ImportFile",
-            "SendRequest",
-            "OpenUrl"
-          ]
-        },
-        "Description": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "Icon": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "Name": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "CommandName": {
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      },
-      "required": [
-        "ActionType",
-        "Description",
-        "Icon",
-        "Name",
-        "CommandName"
-      ]
-    }
-  },
-  "type": "object",
-  "properties": {
-    "ToolBar": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/IButton"
-      }
-    },
-    "ContextButtons": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/ContextButton"
-      }
-    },
-    "Properties": {
-      "type": [
-        "object",
-        "null"
-      ],
-      "additionalProperties": {
-        "type": [
-          "array",
-          "null"
-        ],
-        "items": {
-          "$ref": "#/definitions/IAttributeElement"
-        }
-      }
-    },
-    "VisibilityFilterSettings": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/IAttributeElement"
-      }
-    },
-    "ProjectSettings": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/IAttributeElement"
-      }
-    }
-  },
-  "required": [
-    "ToolBar",
-    "ContextButtons",
-    "Properties",
-    "VisibilityFilterSettings",
-    "ProjectSettings"
-  ]
+    "required": [
+        "ToolBar",
+        "ContextButtons",
+        "Properties",
+        "VisibilityFilterSettings",
+        "ProjectSettings"
+    ]
 }
