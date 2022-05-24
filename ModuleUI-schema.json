@@ -98,19 +98,19 @@
       ],
       "properties": {
         "ActionType": {
-          "type": "integer",
+          "type": "string",
           "enum": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10
+            "DrawLine",
+            "DrawPolyline",
+            "DrawRectangle",
+            "DrawRectangleOriented",
+            "DrawCircle",
+            "PlacePoint",
+            "PlaceObject",
+            "PlaceObjectOriented",
+            "ImportFile",
+            "SendRequest",
+            "OpenUrl"
           ]
         },
         "Description": {
