@@ -1,0 +1,85 @@
+{
+  "definitions": {
+    "ElementType": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "TypeName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ReadCommand": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "UpdateCommand": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "DeleteCommand": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "TypeName",
+        "ReadCommand",
+        "UpdateCommand",
+        "DeleteCommand"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Author": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ElementTypes": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/ElementType"
+      }
+    }
+  },
+  "required": [
+    "Name",
+    "Author",
+    "Description",
+    "Version",
+    "ElementTypes"
+  ]
+}
