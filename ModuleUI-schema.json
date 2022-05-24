@@ -1,0 +1,211 @@
+{
+  "definitions": {
+    "ContextButton": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "ContextTypes": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "Description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Icon": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "AssemblyName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "CommandName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "ContextTypes",
+        "Description",
+        "Icon",
+        "Name",
+        "AssemblyName",
+        "CommandName"
+      ]
+    },
+    "IAttributeElement": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "Value": {},
+        "Description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "Value",
+        "Description",
+        "Name",
+        "Type"
+      ]
+    },
+    "IButton": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "ActionType": {
+          "type": "integer",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "Description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Icon": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "CommandName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "ActionType",
+        "Description",
+        "Icon",
+        "Name",
+        "CommandName"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "ToolBar": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/IButton"
+      }
+    },
+    "ContextButtons": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/ContextButton"
+      }
+    },
+    "Properties": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": {
+        "type": [
+          "array",
+          "null"
+        ],
+        "items": {
+          "$ref": "#/definitions/IAttributeElement"
+        }
+      }
+    },
+    "VisibilityFilterSettings": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/IAttributeElement"
+      }
+    },
+    "ProjectSettings": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/IAttributeElement"
+      }
+    }
+  },
+  "required": [
+    "ToolBar",
+    "ContextButtons",
+    "Properties",
+    "VisibilityFilterSettings",
+    "ProjectSettings"
+  ]
+}
